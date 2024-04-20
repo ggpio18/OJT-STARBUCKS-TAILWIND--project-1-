@@ -1,0 +1,533 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container{
+    @apply max-w-[90rem] p-6 w-full mx-auto
+}
+
+@layer components{
+    .header{
+    @apply bg-light shadow-md relative
+    }
+    .branding{
+        @apply md:flex
+        items-center
+        gap-12;
+    }
+    .branding img{
+        @apply w-[3rem]
+    }
+    .branding .header__navd{
+        @apply hidden
+        md:flex
+        md:gap-10;
+    }
+    .branding .header__navd li a{
+        @apply font-medium
+        text-sm
+        text-dark
+        hover:text-berde;
+    }
+    .header__action{
+        @apply bg-light
+        absolute top-[6.1rem] 
+        right-0 
+        w-0 
+        h-[90vh] 
+        px-0 
+        pt-0 
+        overflow-hidden 
+        transition-all
+        shadow-md
+        md:static
+        md:h-fit
+        md:w-fit
+        md:shadow-none;
+    }
+    .header__action.open{
+        @apply w-[80%] 
+        px-10 
+        pt-10 
+        transition-all;
+    }
+    .header__action .header__navm{
+        @apply border-b-gray-400 
+        border-b-[2px] 
+        pb-5 
+        flex 
+        flex-col 
+        gap-5
+        md:hidden;
+    }
+    .header__action .header__navm li:hover a{
+        @apply text-berde
+    }
+    .header__action .header__navm li a{
+        @apply font-medium
+        text-xl
+        text-dark;
+    }
+    .header__action .header__btn a{
+        @apply flex
+        gap-[1rem]
+        items-center
+        hover:text-berde;
+
+    }
+    .header__action .header__btn{
+        @apply pt-5 
+        flex flex-col 
+        gap-3
+        md:flex-row-reverse;
+    }
+    .header__action .header__kamote{
+        @apply flex gap-5
+    }
+
+    .burgir__menu{
+        @apply md:hidden;
+    }
+    .burgir__menu span{
+        @apply w-[1.5rem] 
+        h-[.2rem]
+         bg-gray-700 
+         block 
+         rounded-full 
+         transition-all
+    }
+    .burgir__menu span:nth-child(2){
+        @apply my-1
+    }
+    .header__wrapper{
+        @apply flex 
+        items-center 
+        justify-between
+    }
+    .burgir__menu.open span:first-child{
+        @apply transform translate-y-[10px] 
+        rotate-[225deg] 
+        transition-all
+    }
+    .burgir__menu.open span:nth-child(2){
+        @apply opacity-0 transition-all;
+    }
+    .burgir__menu.open span:last-child{
+        @apply transform 
+        translate-y-[-6px] 
+        rotate-[-225deg] 
+        transition-all
+    }
+
+    /* bANNER  code of sir*/
+    .banner{
+        @apply py-6
+    }
+    .banner__wrapper{
+        @apply flex
+        flex-col
+        gap-6
+    }
+    .banner__text{
+        @apply text-center
+        py-3
+        flex
+        flex-col
+        gap-6
+    } 
+    .banner__item:nth-child(odd) h2{
+        @apply text-3xl
+        font-semibold
+        text-dark
+        md:text-5xl
+        md:max-w-[30rem]
+        md:mx-auto
+    }
+    .banner__item:nth-child(odd) p{
+        @apply text-2xl
+        text-dark
+        px-[2rem]
+        max-w-[35rem]
+        mx-auto
+        md:text-[1.8rem]
+    }
+    .banner__item:nth-child(even) h2{
+        @apply text-2xl
+        font-semibold
+        text-dark
+        md:text-[1.7rem]
+        md:max-w-[25rem]
+        md:mx-auto
+    }
+    .banner__item:nth-child(even) p{
+        @apply text-xl
+        text-dark
+        max-w-[25rem]
+        mx-auto
+        md:text-[1.7rem]
+    }
+    .banner__item:last-child h2,.banner__item:last-child p {
+        @apply text-light
+    }
+    .banner__item img{
+        @apply md:w-[90rem]
+    }
+    .banner__item{
+        @apply 
+        mx-auto
+        md:grid
+        md:grid-cols-[_2fr,_2fr]
+        md:items-center
+        md:max-w-[90rem] 
+    }
+    .banner__item:nth-child(even) img{
+        @apply md:order-2
+    }
+     /* COLORS BANNER */
+     .banner__item:first-child{
+        @apply bg-[#d5d0ea]
+    }
+    .banner__item:nth-child(2){
+        @apply bg-[#f2f0eb]
+    }
+    .banner__item:nth-child(3){
+        @apply bg-[#cee8c9]
+    }
+    .banner__item:nth-child(4){
+        @apply bg-[#f5cac4]
+    }
+    .banner__item:nth-child(5){
+        @apply bg-[#dbe6f2]
+    }
+    .banner__item:nth-child(6){
+        @apply bg-[#d5d0ea]
+    }
+    .banner__item:nth-child(7){
+        @apply bg-[#e99264]
+    }
+    .banner__item:last-child{
+        @apply bg-[#006241]
+    }
+
+    /* LINKS*/
+    .links{
+        @apply py-6
+        border-t-2
+    }
+    .links__item ul{
+        @apply max-h-[0rem]
+        overflow-hidden
+        transition-all
+        flex
+        flex-col
+        gap-6
+        md:max-h-[50rem]
+        md:pt-6
+    }
+    /* in every css how you call it on first then you should call it on 2nd in transition */
+    .links__item ul.open{
+        @apply  max-h-[50rem]
+        pt-6
+        transition-all
+    }
+    .links__item ul li a{
+        @apply text-gray-500
+        hover:text-dark
+    }
+    .links__item h4{
+        @apply flex
+        items-center
+        justify-between
+        font-semibold
+        hover:cursor-pointer
+    }
+    .links__wrapper{
+        /* @apply flex
+        flex-col
+        gap-10 */
+        @apply grid
+        grid-cols-1
+        gap-10
+        md:grid
+        md:grid-cols-[_1fr,_1fr,_1fr,_1fr,_1fr,_1.5fr]
+        
+    }
+    .links__item h4 i {
+        @apply transition-all
+        md:hidden
+    }
+    .links__item h4 i.open{
+        @apply transform
+        rotate-180
+        transition-all
+    }
+
+    /* FOOTER */
+    .footer{
+        @apply py-4
+    }
+    .footer .container{
+        @apply border-t-2
+    }
+    .footer .footer__wrapper{
+        /* @apply border-t-2 */
+    }
+    .footer .footer__wrapper .social__icons ul{
+        @apply flex
+        gap-5
+        text-3xl
+        mb-2
+        md:mb-2
+    }
+    .footer .social__icons li:hover{
+        @apply scale-[1.1]
+    }
+    .footer .footer__wrapper .footer__text ul{
+        @apply grid
+        grid-cols-1
+        gap-5
+        pt-2
+        md:flex
+        md:flex-row
+        md:gap-10
+    }
+    .footer .footer__wrapper .footer__text ul li{
+        @apply md:flex
+        hover:text-berde
+        hover:font-semibold
+    }
+
+    .footer .footer__wrapper .footer__text ul li a span{
+        @apply mb-10
+        hidden
+        md:gap-[3.5rem]
+        md:inline-block
+        md:text-[1rem]
+        md:mb-5
+    }
+    .footer .footer__wrapper p{
+        @apply text-gray-500
+        text-sm
+    }
+
+    /* RBANNER */
+    .rBanner{
+        @apply bg-bituinBanner
+        min-h-[600px]
+        bg-cover
+        bg-lberde
+        bg-center
+        bg-right-bottom
+        flex
+        text-center
+        md:bg-starBanner
+        md:bg-left
+        md:text-left
+        md:items-center
+    }
+    .rBanner  .rBanner__wrapper h1{
+        @apply font-semibold
+        text-[2rem]
+
+    }
+
+    /* INSTRCUTION EASY */
+    .instruc{
+        @apply p-[1rem]
+        md:p-[4rem]
+    }
+    .instruc__title{
+        @apply text-center
+        mb-7
+        md:mb-10
+    }
+    .instruc__title h2{
+        @apply text-3xl
+        mb-4
+    }
+    .instruc__title p{
+        @apply text-sm
+        mb-3
+    }
+    .instruc__wrapper{
+        @apply
+        px-1
+        md:grid
+        md:grid-cols-3
+    }
+    .intst__content h2{
+        @apply font-semibold
+        mb-5
+    }
+    .intst__content p{
+        @apply mb-5
+        md:mx-8
+    }
+    .instruc__card{
+        @apply flex
+        gap-4
+        md:grid
+        md:text-center
+    }
+    .circle h1{
+        @apply text-5xl
+    }
+    .circle{
+        @apply text-[30px] 
+        font-semibold
+        relative 
+        leading-[1em] 
+        transition-[0.4s] 
+        duration-[all] 
+        ease-[ease] 
+        text-[#006341] 
+        w-[43px] 
+        h-[43px] 
+        inline-block 
+        text-center 
+        rounded-[500px] 
+        border-2 
+        border-solid 
+        border-[#006341];
+    }
+
+
+    /* FAVORITE FOR FREE SEC */
+    .coffee__nav{
+        @apply bg-semiw
+        pt-10
+    }
+    .coffee__nav h4{
+        @apply text-2xl
+        font-semibold
+        text-center
+    }
+    .coffee__nav ul{
+        @apply flex
+        items-center
+        justify-center
+        mt-6
+    }
+    .coffee__nav ul li{
+        @apply  px-4
+        pb-3
+        border-b-4
+        border-transparent
+        }
+    .coffee__nav ul li.active{
+        @apply border-b-4
+        border-berde
+    }
+    .coffee__nav ul li a{
+        @apply text-lg
+        font-semibold
+    }
+    .coffee__tab{
+        @apply bg-lberde
+        relative
+        h-[500px]
+        md:h-[250px]
+    }
+    .coffee__item{
+        @apply absolute
+        opacity-0
+        transition-all
+        top-8
+        md:grid
+        md:grid-cols-[_2fr,_2fr]
+        md:items-center
+        md:max-w-[40rem]
+        md:left-[25%]
+    }
+    .coffee__item.active{
+        @apply opacity-100
+        transition-all
+    }
+    .coffee__text h5{
+        @apply text-xl
+        font-semibold
+        text-center
+    }
+    .coffee__text p{
+        @apply text-center
+    }
+    .coffee__text{
+        @apply flex
+        flex-col
+        gap-6
+        mt-4
+    }
+    }
+    /* Code of sir */
+
+    /* .banner__items{
+        @apply md:grid
+        md:grid-cols-1
+        items-center
+        lg:place-items-center
+        lg:text-center
+        lg:grid
+        lg:grid-cols-2
+        md:p-[5rem]
+    }
+    .banner__text{ 
+        @apply 
+        flex
+        flex-col
+        text-center
+        justify-center
+        items-center
+        gap-5
+        p-[1rem]
+        lg:p-[1rem]
+    }
+    .banner__text h2{
+        @apply text-xl
+        font-medium
+        text-3xl
+        text-berde
+    }
+    .banner__text .btn{
+        @apply lg:max-w-[10rem]
+        lg:justify-self-center
+    }
+    .banner img{
+        @apply object-contain
+        w-[100%]
+        h-[100%]
+    }
+    .banner .banner__items:nth-child(odd) div:last-child{
+        order: -1;
+    } */
+
+   
+
+   
+
+
+
+@layer utilities{
+    .btn{
+        @apply inline-block
+        py-[.5rem]
+        px-[1rem]
+        rounded-full
+        border-transparent
+        border-[1px]
+        text-sm
+        font-medium hover:scale-[0.9]
+    }
+    .btn.bg--dark{
+        @apply bg-dark text-light
+    }
+    .btn.bg--light{
+        @apply bg-light 
+        text-dark 
+        border-dark 
+        border-[1px]
+        hover:bg-zinc-200;
+    }
+    .btn.bg--berde{
+        @apply bg-berde text-light
+    }
+}
